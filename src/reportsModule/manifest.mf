@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: no.arkivverket.dataextracttools.arkade.modules.reports
+OpenIDE-Module-Localizing-Bundle: no/arkivverket/dataextracttools/arkade/modules/reports/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: no.arkivverket.dataextracttools.arkade.modules.init
+OpenIDE-Module-Install: no/arkivverket/dataextracttools/arkade/modules/init/Installer.class
+OpenIDE-Module-Localizing-Bundle: no/arkivverket/dataextracttools/arkade/modules/init/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

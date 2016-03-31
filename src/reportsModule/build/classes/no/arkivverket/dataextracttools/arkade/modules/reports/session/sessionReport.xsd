@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://www.arkivverket.no/dataextracttools/arkade/sessionreport"
+  xmlns="http://www.arkivverket.no/dataextracttools/arkade/sessionreport" version="0.16">
+
+  <xs:element name="sessionReport" type="sessionReport"/>
+  <xs:complexType name="sessionReport">
+    <xs:sequence>
+      <xs:element name="sessionInformation" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="identifiers" type="identifiers"/>
+            <xs:element name="timeCreated" type="xs:dateTime" minOccurs="0"/>
+            <xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+            <xs:element minOccurs="0" name="application">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="name" type="xs:string"/>
+                  <xs:element minOccurs="0" name="version" type="xs:string"/>
+                  <xs:element minOccurs="0" name="description" type="description"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="datasetDescriptionName" type="xs:string"/>
+            <xs:element minOccurs="0" name="dataDirectory" type="xs:string"/>
+            <xs:element minOccurs="0" name="outputDirectory" type="xs:string"/>
+            <xs:element minOccurs="0" name="informationItems" type="informationItems"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="datasetDescription" type="xs:anyType"/>
+      <xs:element name="activities" type="activities"/>
+      <xs:element minOccurs="0" name="status" type="status"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="informationItems">
+    <xs:sequence>
+      <xs:element name="informationItem" type="informationItem" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informationItem">
+    <xs:sequence>
+      <xs:element name="content" type="content" minOccurs="0"/>
+      <xs:element minOccurs="0" name="informationItems" type="informationItems"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="activities">
+    <xs:sequence>
+      <xs:element name="activity" type="activity" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="activity">
+    <xs:sequence minOccurs="0">
+      <xs:element minOccurs="0" name="identifiers" type="identifiers"/>
+      <xs:element name="timeStarted" type="xs:dateTime" minOccurs="0"/>
+      <xs:element minOccurs="0" name="description" type="description"/>
+      <xs:element name="result" type="result" minOccurs="0"/>
+      <xs:element name="timeEnded" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="status" type="status" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="longName" type="xs:string"/>
+    <xs:attribute name="orderKey" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="description"/>
+      <xs:element name="resultItems" type="resultItems"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="resultItems">
+    <xs:sequence>
+      <xs:element name="resultItem" type="resultItem" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identifiers" type="identifiers"/>
+      <xs:element minOccurs="0" name="label" type="label"/>
+      <xs:element name="content" type="content" minOccurs="0"/>
+      <xs:element minOccurs="0" name="resultItems" type="resultItems"/>
+      <xs:element minOccurs="0" name="descripton" type="description"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType mixed="true" name="description">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="descriptionList" type="descriptionList"/>
+      <xs:element name="textBlock" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="descriptionList">
+    <xs:sequence>
+      <xs:element name="listItem" type="listItem" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="listItem">
+    <xs:sequence>
+      <xs:element name="label" type="label" minOccurs="0"/>
+      <xs:element name="content" type="content" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="completed"/>
+      <xs:enumeration value="aborted"/>
+      <xs:enumeration value="unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="identifiers">
+    <xs:sequence minOccurs="1">
+      <xs:element maxOccurs="unbounded" name="identifier">
+        <xs:complexType>
+          <xs:attribute name="name" use="required"/>
+          <xs:attribute name="value"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="label">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="content">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+</xs:schema>

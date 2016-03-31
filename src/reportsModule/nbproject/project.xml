@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.apisupport.project</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
+            <code-name-base>no.arkivverket.dataextracttools.arkade.modules.reports</code-name-base>
+            <suite-component/>
+            <module-dependencies>
+                <dependency>
+                    <code-name-base>no.arkivverket.dataextracttools.arkade.modules.addml</code-name-base>
+                    <build-prerequisite/>
+                    <compile-dependency/>
+                    <run-dependency>
+                        <specification-version>1.0</specification-version>
+                    </run-dependency>
+                </dependency>
+                <dependency>
+                    <code-name-base>no.arkivverket.dataextracttools.arkade.modules.utils</code-name-base>
+                    <build-prerequisite/>
+                    <compile-dependency/>
+                    <run-dependency>
+                        <specification-version>1.0</specification-version>
+                    </run-dependency>
+                </dependency>
+            </module-dependencies>
+            <public-packages>
+                <package>no.arkivverket.dataextracttools.arkade.modules.reports</package>
+                <package>no.arkivverket.dataextracttools.arkade.modules.reports.session</package>
+                <package>no.arkivverket.dataextracttools.arkade.modules.reports.session.bind</package>
+            </public-packages>
+        </data>
+    </configuration>
+</project>

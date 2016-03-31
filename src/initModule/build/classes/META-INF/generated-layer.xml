@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Help">
+            <file name="no-arkivverket-dataextracttools-arkade-modules-init-AboutAction.instance">
+                <!--no.arkivverket.dataextracttools.arkade.modules.init.AboutAction-->
+                <attr
+                    bundlevalue="no.arkivverket.dataextracttools.arkade.modules.init.Bundle#LBL_About" name="displayName"/>
+                <attr
+                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
+                <attr name="delegate" newvalue="no.arkivverket.dataextracttools.arkade.modules.init.AboutAction"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Help">
+            <file name="no-arkivverket-dataextracttools-arkade-modules-init-AboutAction.shadow">
+                <!--no.arkivverket.dataextracttools.arkade.modules.init.AboutAction-->
+                <attr name="originalFile" stringvalue="Actions/Help/no-arkivverket-dataextracttools-arkade-modules-init-AboutAction.instance"/>
+                <attr intvalue="100" name="position"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

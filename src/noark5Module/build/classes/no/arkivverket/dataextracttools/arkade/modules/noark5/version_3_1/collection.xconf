@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0">
+    <!--<validation mode="no"/>-->
+    <index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:n5a = "http://www.arkivverket.no/standarder/noark5/arkivstruktur" 
+           xmlns:n5l = "http://www.arkivverket.no/standarder/noark5/endringslogg"
+           xmlns:n5lj = "http://www.arkivverket.no/standarder/noark5/loependeJournal"
+           xmlns:n5oj = "http://www.arkivverket.no/standarder/noark5/offentligJournal">
+        <fulltext default="none" attributes="false">
+        </fulltext>
+
+	<create qname="@xsi:type" type="xs:string"/>
+        
+        <create qname="n5a:systemID" type="xs:string"/>
+        <create qname="n5a:opprettetDato" type="xs:dateTime"/>
+        <create qname="n5a:journalposttype" type="xs:string"/>
+        <create qname="n5a:journalstatus" type="xs:string"/>
+        <create qname="n5a:journaldato" type="xs:date"/>
+        <create qname="n5a:avskrivningsmaate" type="xs:string"/>
+        <create qname="n5a:referanseAvskrivesAvJournalpost" type="xs:string"/>
+        <!-- M217 -->
+        <create qname="n5a:tilknyttetRegistreringSom" type="xs:string"/>
+        <create qname="n5a:dokumentstatus" type="xs:string"/>
+        <create qname="n5a:referanseDokumentfil" type="xs:string"/>
+        <create qname="n5a:format" type="xs:string"/>
+                
+        <create qname="n5l:referanseArkivenhet" type="xs:string"/>
+        
+        <create qname="n5lj:journaldato" type="xs:date"/>
+        
+        <create qname="n5oj:journaldato" type="xs:date"/>
+    </index>
+
+</collection>

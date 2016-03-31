@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: no.arkivverket.dataextracttools.arkade.modules.exist
+OpenIDE-Module-Localizing-Bundle: no/arkivverket/dataextracttools/arkade/modules/exist/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
